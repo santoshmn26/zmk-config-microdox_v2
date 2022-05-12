@@ -43,7 +43,7 @@
 // | BT2 |     |     |      |     |   |  \  | ENT  |      |     |      |
 //             |     |      |     |   |     |      |      |
                         bindings = <
-   &kp HOME   &kp UP     &kp END        &kp RET     &kp KP_PLUS         &kp KP_MULTIPLY    &kp LG(LC(RIGHT))    &kp MINUS      &kp SQT     &kp SEMI
+   &td0  &kp UP     &kp END        &kp RET     &kp KP_PLUS         &kp KP_MULTIPLY    &kp LG(LC(RIGHT))    &kp MINUS      &kp SQT     &kp SEMI
    &kp LEFT   &kp DOWN   &kp RIGHT      &kp DEL     &kp EQUAL           &kp LC(LA(TAB))    &kp BSPC             &kp UNDER      &kp DQT     &kp COLON
    &kp LC(C)  &kp LC(V)  &kp CAPSLOCK   &kp BSPC    &kp BSLH            &kp PIPE             &kp LG(LC(LEFT))     &kp LT         &kp GT      &kp QMARK
                             &kp LC(A)    &trans     &kp TILDE          &kp LSHIFT  &kp ESC   &kp LC(LA(DEL))
