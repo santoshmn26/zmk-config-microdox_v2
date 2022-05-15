@@ -11,7 +11,7 @@
 
 // MOD TAB CTRL Z
 &mt {
-    tapping-term-ms = <400>;
+    tapping-term-ms = <200>;
 };
 
 
