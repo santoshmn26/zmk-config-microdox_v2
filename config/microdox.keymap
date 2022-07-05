@@ -14,6 +14,24 @@
     tapping-term-ms = <200>;
 };
 
+// MACRO SELECT FULL LINE
+/ {
+    macros {
+        full_line: full_line {
+            label = "sel_full_line";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp HOME>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp END>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+    };
+};
+
+
 
 // SHIFT AND CAPSLOCK
 / {
@@ -53,8 +71,8 @@
 //             |     |      |     |   |     |      |      |
                         bindings = <
    &kp HOME   &kp UP       &kp END        &kp RET     &kp KP_PLUS         &kp KP_MULTIPLY    &kp LG(LC(RIGHT))    &kp MINUS      &kp SQT     &kp LC(BSPC)
-   &kp LEFT   &kp DOWN   &kp RIGHT      &kp DEL     &kp EQUAL           &kp LC(LA(TAB))    &kp BSPC             &kp UNDER      &kp DQT     &kp COLON
-   &kp LC(C)  &kp LC(V)  &kp LALT         &kp BSPC    &kp BSLH            &kp PIPE             &kp LG(LC(LEFT))     &kp LT         &kp GT      &kp QMARK
+   &kp LEFT   &kp DOWN     &kp RIGHT      &kp DEL     &kp EQUAL           &kp LC(LA(TAB))    &kp BSPC             &kp UNDER      &kp DQT     &kp COLON
+   &kp LC(C)  &kp LC(V)    &kp LALT       &kp BSPC    &kp BSLH            &kp PIPE           &kp LG(LC(LEFT))     &kp LT         &kp GT      &kp QMARK
                             &kp LC(A)    &trans     &kp TILDE          &kp LSHIFT  &kp ESC   &mo 3
                         >;
                 };
@@ -66,10 +84,10 @@
 // |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |
 //             | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp LPAR    &kp KP_N7    &kp KP_N8  &kp KP_N9    &kp EXCL        &kp DOLLAR &kp PRCNT     &kp CARET         &bt BT_CLR     &kp RPAR
-   &kp LBRC    &kp KP_N4    &kp KP_N5  &kp KP_N6    &kp AT          &kp MINUS  &kp TAB       &kp HASH          &kp SEMI       &kp RBRC
-   &kp LBKT    &kp KP_N1    &kp KP_N2  &kp KP_N3    &kp KP_N0          &kp AMPS   &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2   &kp RBKT
-                       &kp LS(LC(LEFT))  &kp LS(LC(RIGHT)) &kp LC(BSPC)             &kp LS(FSLH)      &trans         &kp LS(TAB)
+   &kp LPAR    &kp LS(LC(HOME))          &full_line    &kp LS(LC(END))            &kp EXCL        &kp DOLLAR &kp PRCNT     &kp CARET         &bt BT_CLR     &kp RPAR
+   &kp LBRC    &kp LS(LC(LEFT))          &kp KP_N5     &kp LS(LC(RIGHT))          &kp AT          &kp MINUS  &kp TAB       &kp HASH          &kp SEMI       &kp RBRC
+   &kp LBKT    &kp KP_N1                 &kp KP_N2     &kp KP_N3  &kp KP_N0       &kp AMPS   &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2   &kp RBKT
+                       &kp LALT  &kp TAB &kp LC(DEL)             &kp LS(FSLH)      &trans         &kp LS(TAB)
                         >;
                 };
 
@@ -82,9 +100,9 @@
 // |     |     |     |     |     |   |  C  |  1  |  2  |  3  |  F  |
 //             |     |     |     |   |  0  |  .  |     |
                         bindings = <
-   &trans &trans &trans &trans &trans    &kp A  &kp N7  &kp N8 &kp N9 &kp D
-   &trans &trans &trans &trans &trans    &kp B  &kp N4  &kp N5 &kp N6 &kp E
-   &trans &trans &trans &trans &trans    &kp C  &kp N1  &kp N2 &kp N3 &kp F
+   &kp TAB       &kp EXCL        &kp AT      &kp HASH      &kp AMPS    &kp A   &kp N7  &kp N8 &kp N9 &kp K_SCROLL_UP
+   &trans        &kp LS(LS(F1))  &trans      &trans        &trans      &kp B   &kp N4  &kp N5 &kp N6 &kp K_SCROLL_DOWN
+   &trans        &trans          &trans      &trans        &trans      &kp N0  &kp N1  &kp N2 &kp N3 &kp BSPC
                  &trans &trans &kp LOCKING_NUM   &kp N0 &kp DOT &trans
                         >;
                 };
