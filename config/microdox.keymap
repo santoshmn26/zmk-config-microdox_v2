@@ -66,7 +66,7 @@
 // |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |
 //             | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp LPAR    &kp LS(LC(HOME))          &full_line    &kp LS(LC(END))            &kp EXCL        &kp DOLLAR &kp PRCNT     &kp CARET         &bt BT_CLR     &kp RPAR
+   &kp LPAR    &kp LS(LC(HOME))          &trans    &kp LS(LC(END))            &kp EXCL        &kp DOLLAR &kp PRCNT     &kp CARET         &bt BT_CLR     &kp RPAR
    &kp LBRC    &kp LS(LC(LEFT))          &kp KP_N5     &kp LS(LC(RIGHT))          &kp AT          &kp MINUS  &kp TAB       &kp HASH          &kp SEMI       &kp RBRC
    &kp LBKT    &kp KP_N1                 &kp KP_N2     &kp KP_N3  &kp KP_N0       &kp AMPS   &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2   &kp RBKT
                        &kp LALT  &kp TAB &kp LC(DEL)             &kp LS(FSLH)      &trans         &kp LS(TAB)
