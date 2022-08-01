@@ -8,15 +8,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-&pro_micro_i2c {
-	status = "okay";
-
-	trackball_pim447@a {
-		compatible = "pimoroni,trackball_pim447";
-		reg = <0xa>;
-		label = "TRACKBALL_PIM447";
-	};
-};
 / {
         keymap {
                 compatible = "zmk,keymap";
