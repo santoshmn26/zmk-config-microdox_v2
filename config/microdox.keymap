@@ -14,24 +14,6 @@
     tapping-term-ms = <200>;
 };
 
-// MACRO SELECT FULL LINE
-/ {
-    macros {
-        full_line: full_line {
-            label = "sel_full_line";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp HOME>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp END>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
-    };
-};
-
-
 
 // SHIFT AND CAPSLOCK
 / {
