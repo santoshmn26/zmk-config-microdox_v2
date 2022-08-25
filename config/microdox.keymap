@@ -76,7 +76,7 @@
 // |  Z  |  X  |  C  |  V  |  B   |   |  N  |  M   |  ,  |  .  |  /  |
 //             | GUI | NAV | SHFT |   | SPC | SYM  | ALT |
                         bindings = <
-   &kp Q  &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &td 4
+   &kp Q  &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &td4
    &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp RET
    &mt LCTRL Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
           &td2 &mo 1 &lt 3 SPACE &td1 &mo 2 &td3
