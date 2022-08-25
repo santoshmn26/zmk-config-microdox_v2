@@ -27,6 +27,43 @@
         };
     };
     };
+ 
+ 
+// FIRST_LINE
+/ {
+    behaviors {
+        td2: tap_dance_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1";
+            tapping-term-ms = <180>;
+            bindings = <&kp LGUI>, <&kp LC(HOME)>;
+        };
+    };
+    };
+
+// LAST_LINE
+/ {
+    behaviors {
+        td3: tap_dance_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_1";
+            tapping-term-ms = <180>;
+            bindings = <&kp LGUI>, <&kp LC(END)>;
+        };
+    };
+    };
+    
+// PREVIOUS_LINE
+/ {
+    behaviors {
+        td4: tap_dance_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_2";
+            tapping-term-ms = <180>;
+            bindings = <&kp P>, <&kp LA(LEFT)>;
+        };
+    };
+    };
     
 / {
         keymap {
@@ -39,10 +76,10 @@
 // |  Z  |  X  |  C  |  V  |  B   |   |  N  |  M   |  ,  |  .  |  /  |
 //             | GUI | NAV | SHFT |   | SPC | SYM  | ALT |
                         bindings = <
-   &kp Q  &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P
+   &kp Q  &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &td 4
    &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp RET
    &mt LCTRL Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-          &kp LGUI &mo 1 &lt 3 SPACE &td1 &mo 2 &kp LCTRL
+          &td2 &mo 1 &lt 3 SPACE &td1 &mo 2 &td3
                         >;
                 };
                 nav_layer {
@@ -55,7 +92,7 @@
    &kp HOME   &kp UP       &kp END        &kp RET     &kp KP_PLUS         &kp KP_MULTIPLY    &kp LG(LC(RIGHT))    &kp MINUS      &kp SQT     &kp LC(BSPC)
    &kp LEFT   &kp DOWN     &kp RIGHT      &kp DEL     &kp EQUAL           &kp LC(LA(TAB))    &kp BSPC             &kp UNDER      &kp DQT     &kp COLON
    &kp LC(C)  &kp LC(V)    &kp LALT       &kp BSPC    &kp BSLH            &kp PIPE           &kp LG(LC(LEFT))     &kp LT         &kp GT      &kp QMARK
-                            &kp LC(A)    &trans     &kp TILDE          &kp LSHIFT  &kp ESC   &mo 3
+                            &kp LC(A)    &trans     &kp TILDE          &kp LSHIFT  &kp ESC   &kp GRAVE
                         >;
                 };
 
@@ -66,10 +103,10 @@
 // |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |
 //             | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp LPAR    &kp LS(LC(HOME))          &trans    &kp LS(LC(END))            &kp EXCL        &kp DOLLAR &kp PRCNT     &kp CARET         &bt BT_CLR     &kp RPAR
+   &kp LPAR    &kp LS(LC(HOME))          &trans    &kp LS(LC(END))            &kp EXCL        &kp DOLLAR &kp PRCNT     &kp CARET         &kp 0     &kp RPAR
    &kp LBRC    &kp LS(LC(LEFT))          &kp KP_N5     &kp LS(LC(RIGHT))          &kp AT          &kp MINUS  &kp TAB       &kp HASH          &kp SEMI       &kp RBRC
    &kp LBKT    &kp KP_N1                 &kp KP_N2     &kp KP_N3  &kp KP_N0       &kp AMPS   &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2   &kp RBKT
-                       &kp LALT  &kp TAB &kp LC(DEL)             &kp LS(FSLH)      &trans         &kp LS(TAB)
+                       &kp LALT  &mo 1 &kp LC(DEL)             &kp LS(FSLH)      &trans         &kp LS(TAB)
                         >;
                 };
 
@@ -84,7 +121,7 @@
                         bindings = <
    &kp TAB       &kp EXCL        &kp AT      &kp HASH      &bt BT_CLR     &kp PAGE_UP     &kp N7  &kp N8 &kp N9 &kp LC(TAB)
    &trans        &kp LS(LS(F1))  &trans      &trans        &trans            &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &kp LC(LS(TAB))
-   &trans        &trans          &trans      &trans        &trans            &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
+   &kp LC(z)        &trans          &trans      &trans        &trans            &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
                  &trans &trans &kp LOCKING_NUM   &trans &kp DOT &kp LC(LA(DEL))
                         >;
                 };
