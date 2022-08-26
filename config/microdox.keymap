@@ -73,8 +73,59 @@
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <5 6>;
-            bindings = <&kp ESC>;
+            key-positions = <17 18>;
+            bindings = <&kp HASH>;
+        };
+    };
+};
+
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp TAB>;
+        };
+    };
+};
+
+/ {
+    macros {
+        del_line: del_line {
+            label = "del_line_label";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp HOME>
+                , <&macro_press LSHIFT>
+                , <&macro_tap &kp END>
+                , <&macro_release &kp LSHFT>
+                , <&macro_tap &kp BSPC>
+                ;
+        };
+    };
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <13 16>;
+            bindings = <&kp LC(Z)>;
+        };
+    };
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <12 17>;
+            bindings = <&del_line>;
         };
     };
 };
