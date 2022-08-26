@@ -91,22 +91,16 @@
             key-positions = <17 18>;
             bindings = <&kp HASH>;
         };
-    combos {
-       compatible = "zmk,combos";
        combo_tab {
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&kp TAB>;
         };
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
+        combo_undo {
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&kp LC(Z)>;
         };
-    combos {
-        compatible = "zmk,combos";
         combo_del_line {
             timeout-ms = <50>;
             key-positions = <12 17>;
