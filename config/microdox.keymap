@@ -57,41 +57,51 @@
             key-positions = <11 12>;
             bindings = <&kp TAB>;
         };
-       combo_first_line {
+       combo_sel_line_home {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&kp LC(HOME)>;
+            bindings = <&kp LS(HOME)>;
         };
-       combo_at {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp AT>;
-        };
-       combo_last_line {
+       combo_sel_line_end {
             timeout-ms = <50>;
             key-positions = <8 9>;
+            bindings = <&kp LS(END)>;
+        };      
+       combo_first_line {
+            timeout-ms = <50>;
+            key-positions = <5 6>;
+            bindings = <&kp LC(HOME)>;
+        };
+       combo_prev_line {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&kp LC(LA(LEFT))>;
+        };        
+       combo_last_line {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
             bindings = <&kp LC(END)>;
-        };         
-        combo_undo {
+        };        
+        combo_dot {
             timeout-ms = <50>;
             key-positions = <16 17>;
-            bindings = <&kp LC(Z)>;
-        };
-        combo_undo {
+            bindings = <&kp DOT>;
+        }; 
+        combo_equal {
             timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp LC(LS(LEFT))>;
-        };   
-        combo_ls_left {
+            key-positions = <13 16>;
+            bindings = <&kp EQUAL>;
+        }; 
+       combo_at {
             timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp LC(LS(LEFT))>;
-        };  
-        combo_ls_right {
+            key-positions = <7 8>;
+            bindings = <&kp AT>;
+        };        
+        combo_and {
             timeout-ms = <50>;
-            key-positions = <18 19>;
-            bindings = <&kp LC(LS(RIGHT))>;
-        };  
+            key-positions = <27 28>;
+            bindings = <&kp AMPS>;
+        }; 
         combo_del_line {
             timeout-ms = <50>;
             key-positions = <12 17>;
