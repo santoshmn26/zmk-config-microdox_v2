@@ -93,16 +93,14 @@
 
 / {
     macros {
-        del_line: del_line {
-            label = "del_line_label";
+        zed_em_kay: zed_em_kay {
+            label = "ZM_zed_em_kay";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp HOME>
-                , <&macro_press LSHIFT>
-                , <&macro_tap &kp END>
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp Z &kp M &kp K>
                 , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp BSPC>
                 ;
         };
     };
@@ -125,7 +123,7 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <12 17>;
-            bindings = <&del_line>;
+            bindings = <&zed_em_kay>;
         };
     };
 };
