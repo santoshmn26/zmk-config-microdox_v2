@@ -63,10 +63,21 @@
             label = "TAP_DANCE_4";
             #binding-cells = <0>;            
             tapping-term-ms = <180>;
-            bindings = <&kp P>, <&kp LA(LEFT)>;
+            bindings = <&kp P>, <&kp LA(LC(LEFT))>;
         };
     };
     };
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <33 34>;
+            bindings = <&kp ESC>;
+        };
+    };
+};
     
 / {
         keymap {
