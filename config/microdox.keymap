@@ -111,7 +111,7 @@
             timeout-ms = <50>;
             key-positions = <12 17>;
             bindings = <&zed_em_kay>;
-        };z
+        };
     };
 };
 
