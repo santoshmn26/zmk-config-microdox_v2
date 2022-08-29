@@ -47,7 +47,7 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_hash {
+        combo_hash {  
             timeout-ms = <50>;
             key-positions = <17 18>;
             bindings = <&kp HASH>;
@@ -87,16 +87,21 @@
             key-positions = <16 17>;
             bindings = <&kp DOT>;
         }; 
-        combo_equal {
+        combo_plus {
             timeout-ms = <50>;
-            key-positions = <13 16>;
-            bindings = <&kp EQUAL>;
+            key-positions = <21 22>;
+            bindings = <&kp KP_PLUS>;
         }; 
        combo_at {
             timeout-ms = <50>;
-            key-positions = <7 8>;
+            key-positions = <1 2>;
             bindings = <&kp AT>;
-        };        
+        };   
+       combo_equal {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&kp EQUAL>;
+        };         
         combo_and {
             timeout-ms = <50>;
             key-positions = <27 28>;
@@ -106,12 +111,7 @@
             timeout-ms = <50>;
             key-positions = <12 17>;
             bindings = <&zed_em_kay>;
-        };   
-        combo_backspace {
-            timeout-ms = <50>;
-            key-positions = <16 17 18>;
-            bindings = <&kp BSPC>;
-        };
+        };z
     };
 };
 
