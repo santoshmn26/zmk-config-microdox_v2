@@ -99,7 +99,7 @@
         };   
        combo_equal {
             timeout-ms = <50>;
-            key-positions = <7 8>;
+            key-positions = <6 7>;
             bindings = <&kp EQUAL>;
         };         
         combo_and {
@@ -107,6 +107,16 @@
             key-positions = <27 28>;
             bindings = <&kp AMPS>;
         }; 
+        combo_left_word {
+            timeout-ms = <50>;
+            key-positions = <30 31>;
+            bindings = <&kp LS(LEFT)>;
+        }; 
+        combo_right_word {
+            timeout-ms = <50>;
+            key-positions = <34 35>;
+            bindings = <&kp LS(RIGHT)>;
+        };         
         combo_del_line {
             timeout-ms = <50>;
             key-positions = <12 17>;
