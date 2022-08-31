@@ -82,11 +82,6 @@
             key-positions = <25 26>;
             bindings = <&kp LC(END)>;
         };        
-        combo_dot {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp DOT>;
-        }; 
         combo_plus {
             timeout-ms = <50>;
             key-positions = <21 22>;
@@ -109,12 +104,12 @@
         }; 
         combo_left_word {
             timeout-ms = <50>;
-            key-positions = <30 31>;
+            key-positions = <12 13>;
             bindings = <&kp LS(LEFT)>;
         }; 
         combo_right_word {
             timeout-ms = <50>;
-            key-positions = <34 35>;
+            key-positions = <16 17>;
             bindings = <&kp LS(RIGHT)>;
         };         
         combo_del_line {
