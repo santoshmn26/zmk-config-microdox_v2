@@ -57,12 +57,6 @@
             key-positions = <11 12>;
             bindings = <&kp TAB>;
         };
-       combo_select_up {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp TAB>;
-            layers = <2>
-        };
        combo_sel_line_home {
             timeout-ms = <50>;
             key-positions = <0 1>;
