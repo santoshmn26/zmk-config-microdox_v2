@@ -141,7 +141,17 @@
             timeout-ms = <50>;
             key-positions = <21 23>;
             bindings = <&kp LC(END)>;
-        };              
+        }; 
+        combo_copy {
+            timeout-ms = <45>;
+            key-positions = <11 12 13>;
+            bindings = <kp LC(C)>;        
+        };
+        combo_paste {
+            timeout-ms = <45>;
+            key-positions = <16 17 18>;
+            bindings = <kp LC(V)>;     
+        };        
         
     };
 };
@@ -201,7 +211,7 @@
 // |     |     |     |     |     |   |  C  |  1  |  2  |  3  |  F  |
 //             |     |     |     |   |  0  |  .  |     |
                         bindings = <
-   &kp LC(LA(TAB))  &kp EXCL        &kp AT      &kp HASH      &bt BT_CLR     &kp PAGE_UP     &kp N7  &kp N8 &kp N9 &kp LC(TAB)
+   &kp LC(LS(M))  &kp EXCL        &kp AT      &kp HASH      &bt BT_CLR     &kp PAGE_UP     &kp N7  &kp N8 &kp N9 &kp LC(TAB)
    &trans        &kp LS(LS(F1))  &trans      &trans        &trans            &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &kp LC(LS(TAB))
    &kp LC(Z)        &trans          &trans      &trans        &trans            &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
                  &trans &trans &kp LOCKING_NUM   &trans &kp DOT &kp LC(LA(DEL))
