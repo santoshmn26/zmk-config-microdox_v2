@@ -145,12 +145,12 @@
         combo_copy {
             timeout-ms = <45>;
             key-positions = <11 12 13>;
-            bindings = <kp LC(C)>;        
+            bindings = <&kp LC(C)>;        
         };
         combo_paste {
             timeout-ms = <45>;
             key-positions = <16 17 18>;
-            bindings = <kp LC(V)>;     
+            bindings = <&kp LC(V)>;     
         };        
         
     };
