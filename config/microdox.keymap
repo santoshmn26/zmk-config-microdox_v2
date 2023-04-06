@@ -152,7 +152,27 @@
             timeout-ms = <45>;
             key-positions = <16 17 18>;
             bindings = <&kp LC(V)>;     
-        };        
+        };  
+       select_all {
+            timeout-ms = <45>;
+            key-positions = <21 22 23>;
+            bindings = <&kp LC(A)>;     
+        };
+        undo_recent {
+            timeout-ms = <45>;
+            key-positions = <26 27 28>;
+            bindings = <&kp LC(Z)>;     
+        }; 
+        redo_recent {
+            timeout-ms = <45>;
+            key-positions = <26 28>;
+            bindings = <&kp LC(LS(Z))>;     
+        };
+      ctrl_w {
+            timeout-ms = <45>;
+            key-positions = <16 18>;
+            bindings = <&kp LC(W)>;     
+        };
         
     };
 };
