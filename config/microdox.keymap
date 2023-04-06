@@ -9,7 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-
 // MOD TAB CTRL Z
 &mt {
     tapping-term-ms = <200>;
