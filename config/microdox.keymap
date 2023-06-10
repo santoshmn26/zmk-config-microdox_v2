@@ -7,7 +7,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
 
 
 // MOD TAB CTRL Z
@@ -146,12 +145,12 @@
         combo_copy {
             timeout-ms = <45>;
             key-positions = <11 12 13>;
-            bindings = <&kp LC(C)>;        
+            bindings = <kp LC(C)>;        
         };
         combo_paste {
             timeout-ms = <45>;
             key-positions = <16 17 18>;
-            bindings = <&kp LC(V)>;     
+            bindings = <kp LC(V)>;     
         };        
         
     };
@@ -213,8 +212,8 @@
 //             |     |     |     |   |  0  |  .  |     |
                         bindings = <
    &kp LC(LS(M))  &kp EXCL        &kp AT      &kp HASH      &bt BT_CLR     &kp PAGE_UP     &kp N7  &kp N8 &kp N9 &kp LC(TAB)
-   &trans        &kp LS(LS(F1))  &trans      &trans        &out OUT_USB            &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &kp LC(LS(TAB))
-   &kp LC(Z)        &trans          &trans      &trans        &out OUT_BLE            &kp N0          &kp N1  &kp N2 &kp N3 &out OUT_TOG
+   &trans        &kp LS(LS(F1))  &trans      &trans        &trans            &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &kp LC(LS(TAB))
+   &kp LC(Z)        &trans          &trans      &trans        &trans            &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
                  &trans &trans &kp LOCKING_NUM   &trans &kp DOT &kp LC(LA(DEL))
                         >;
                 };
