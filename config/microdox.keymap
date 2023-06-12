@@ -142,17 +142,17 @@
             key-positions = <21 23>;
             bindings = <&kp LC(END)>;
         }; 
-        combo_paste { 
+        combo_paste_one { 
             timeout-ms = <50>;
             key-positions = <16 17 18>;
             bindings = <&kp LC(V)>;
         };
-        combo_paste { 
+        combo_copy_one { 
             timeout-ms = <50>;
             key-positions = <26 27 28>;
             bindings = <&kp LC(P)>;
         };
-        combo_dot { 
+        combo_dot_n { 
             timeout-ms = <50>;
             key-positions = <27 28>;
             bindings = <&kp DOT>;
