@@ -70,7 +70,7 @@
        combo_prev_line {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            bindings = <&kp LC(LA(LEFT))>;
+            bindings = <&kp LC(LC(LEFT))>;
         };  
         combo_win_copy {
             timeout-ms = <50>;
@@ -141,7 +141,39 @@
             timeout-ms = <50>;
             key-positions = <21 23>;
             bindings = <&kp LC(END)>;
-        };              
+        }; 
+        combo_paste { 
+            timeout-ms = <50>;
+            key-positions = <16 17 18>;
+            bindings = <&kp LC(V)>;
+        };
+        combo_paste { 
+            timeout-ms = <50>;
+            key-positions = <26 27 28>;
+            bindings = <&kp LC(P)>;
+        };
+        combo_dot { 
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp DOT>;
+            layers = <3>;
+        };
+         combo_format { 
+            timeout-ms = <50>;
+            key-positions = <6 7 8>;
+            bindings = <&kp LC(LA(L))>;
+        };
+        combo_terminal { 
+            timeout-ms = <50>;
+            key-positions = <6 7 8>;
+            bindings = <&kp LC(LA(L))>;
+            layers = <3>
+        };
+        combo_word { 
+            timeout-ms = <50>;
+            key-positions = <16 18>;
+            bindings = <&kp LC(W)>;
+        };
         
     };
 };
