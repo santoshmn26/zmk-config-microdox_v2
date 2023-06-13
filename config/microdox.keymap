@@ -169,14 +169,24 @@
          combo_format { 
             timeout-ms = <50>;
             key-positions = <6 7 8>;
-            bindings = <&kp LC(LA(L))>;
+            bindings = <&kp LC(LA(L))>; 
         };
         combo_word { 
             timeout-ms = <50>;
             key-positions = <16 18>;
             bindings = <&kp LC(W)>;
         };
-        
+        combo_alt_tab { 
+            timeout-ms = <50>;
+            key-positions = <16 17 18 19>;
+            bindings = <&kp LA(TAB)>;
+        };
+       combo_func_def { 
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp LC(B)>;
+            layers = <1>;
+        };
     };
 };
 
