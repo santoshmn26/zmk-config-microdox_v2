@@ -177,13 +177,19 @@
         };
         combo_alt_tab { 
             timeout-ms = <50>;
-            key-positions = <16 17 18 19>;
+            key-positions = <10 11 12 13>;
             bindings = <&kp LA(TAB)>;
         };
        combo_func_def { 
             timeout-ms = <50>;
             key-positions = <1 2>;
             bindings = <&kp LC(B)>;
+            layers = <1>;
+        };
+       combo_note_pad_json_format { 
+            timeout-ms = <50>;
+            key-positions = <6 7 8>;
+            bindings = <&kp LC(LS(LA(M)))>;
             layers = <1>;
         };
     };
