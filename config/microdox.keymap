@@ -144,6 +144,18 @@
             key-positions = <21 23>;
             bindings = <&kp LC(END)>;
         }; 
+        combo_terminal { 
+            timeout-ms = <50>;
+            key-positions = <6 7 8>;
+            bindings = <&kp LC(LS(T))>;
+            layers = <3>;
+        };
+        combo_terminal { 
+            timeout-ms = <50>;
+            key-positions = <6 7 8>;
+            bindings = <&kp LC(LS(E))>;
+            layers = <2>;
+        };
         combo_paste_one { 
             timeout-ms = <50>;
             key-positions = <16 17 18>;
@@ -165,11 +177,6 @@
             bindings = <&kp DOT>;
             layers = <3>;
         };
-         combo_format { 
-            timeout-ms = <50>;
-            key-positions = <6 7 8>;
-            bindings = <&kp LC(LA(L))>; 
-        };
         combo_word { 
             timeout-ms = <50>;
             key-positions = <16 18>;
@@ -184,12 +191,6 @@
             timeout-ms = <50>;
             key-positions = <1 2>;
             bindings = <&kp LC(B)>;
-            layers = <1>;
-        };
-       combo_note_pad_json_format { 
-            timeout-ms = <50>;
-            key-positions = <6 7 8>;
-            bindings = <&kp LC(LS(LA(M)))>;
             layers = <1>;
         };
       p_key_temp_fix {
