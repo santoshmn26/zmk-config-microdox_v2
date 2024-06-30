@@ -52,6 +52,7 @@
             timeout-ms = <50>;
             key-positions = <17 18>;
             bindings = <&kp HASH>;
+            layers = <0>;
         };
        combo_tab {
             timeout-ms = <50>;
@@ -97,7 +98,20 @@
             timeout-ms = <50>;
             key-positions = <16 17>;
             bindings = <&kp EQUAL>;
+            layers = <0>;
         };    
+        combo_left_word {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp LC(LEFT)>;
+            layers = <3>;
+        }; 
+        combo_right_word {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp LC(RIGHT)>;
+            layers = <3>;
+        }; 
         combo_plus {
             timeout-ms = <50>;
             key-positions = <26 27>;
@@ -150,7 +164,7 @@
             bindings = <&kp LC(LS(T))>;
             layers = <3>;
         };
-        combo_terminal { 
+        combo_editor { 
             timeout-ms = <50>;
             key-positions = <6 7 8>;
             bindings = <&kp LC(LS(E))>;
