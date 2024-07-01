@@ -11,7 +11,7 @@
 
 // MOD TAB CTRL Z
 &mt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <150>;
 };
 
 // SHIFT AND CAPSLOCK
@@ -41,6 +41,15 @@
                 , <&macro_tap &kp BSPC>
                 ;
         };
+        zmk_clear: zmk_clear {
+            label = "ZM_zmk_clear";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp c &kp l &kp e &kp a &kp r>
+                , <&macro_tap &kp RET>
+                ;
+        };
     };
 };
 
@@ -54,52 +63,72 @@
             bindings = <&kp HASH>;
             layers = <0>;
         };
-       combo_tab {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp TAB>;
-        };
-       combo_sel_line_home {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp LS(HOME)>;
-        };
-       combo_sel_line_end {
-            timeout-ms = <50>;
-            key-positions = <8 9>;
-            bindings = <&kp LS(END)>;
-        };      
-       combo_prev_line {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp LS(LC(LEFT))>;
-        };  
-        combo_win_copy {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp LG(V)>;
-        };         
-       combo_last_line {
-            timeout-ms = <50>;
-            key-positions = <21 23>;
-            bindings = <&kp LC(END)>;
-        };        
        combo_at {
             timeout-ms = <50>;
             key-positions = <1 2>;
             bindings = <&kp AT>;
-        };   
+            layers = <0>;
+        };
        combo_mul {
             timeout-ms = <50>;
             key-positions = <6 7>;
             bindings = <&kp KP_MULTIPLY>;
+            layers = <0>;
         };
         combo_equal {
             timeout-ms = <50>;
             key-positions = <16 17>;
             bindings = <&kp EQUAL>;
             layers = <0>;
-        };    
+        };           
+        combo_plus {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp KP_PLUS>;
+            layers = <0>;
+        };           
+        combo_and {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp AMPS>;
+            layers = <0>;
+        };
+        combo_excel {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&kp EXCL>;
+            layers = <0>;
+        };
+       combo_tab {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+       combo_sel_line_home {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp LS(HOME)>;
+            layers = <0>;
+        };
+       combo_sel_line_end {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&kp LS(END)>;
+            layers = <0>;
+        };      
+        combo_windows_paste_history {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&kp LG(V)>;
+            layers = <0>;
+        };         
+       combo_last_line_eof {
+            timeout-ms = <50>;
+            key-positions = <21 23>;
+            bindings = <&kp LC(END)>;
+            layers = <0>;
+        };  
         combo_left_word {
             timeout-ms = <50>;
             key-positions = <16 17>;
@@ -111,76 +140,67 @@
             key-positions = <17 18>;
             bindings = <&kp LC(RIGHT)>;
             layers = <3>;
-        }; 
-        combo_plus {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&kp KP_PLUS>;
-        };           
-        combo_and {
-            timeout-ms = <50>;
-            key-positions = <27 28>;
-            bindings = <&kp AMPS>;
-            layers = <0>;
-        }; 
+        };  
         combo_right_word_selected {
             timeout-ms = <50>;
-            key-positions = <12 13>;
+            key-positions = <17 18>;
             bindings = <&kp LS(LC(RIGHT))>;
+            layers = <2>;
         }; 
-        combo_excel {
+        combo_left_word_selected {
             timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&kp EXCL>;
-        };         
+            key-positions = <16 17>;
+            bindings = <&kp LS(LC(LEFT))>;
+            layers = <2>;
+        };          
         combo_right_bksp { 
             timeout-ms = <50>;
             key-positions = <18 19>;
             bindings = <&kp BSPC>;
+            layers = <0>;
         };        
-        combo_del_line {
+        combo_del_line_spl_macro {
             timeout-ms = <50>;
             key-positions = <12 17>;
             bindings = <&zed_em_kay>;
+            layers = <0>;
+        };   
+        combo_clear_spl_macro {
+            timeout-ms = <50>;
+            key-positions = <0 9>;
+            bindings = <&zmk_clear>;
+            layers = <3>;
         };   
         combo_top { 
             timeout-ms = <50>;
             key-positions = <1 3>;
             bindings = <&kp LC(HOME)>;
+            layers = <0>;
         };  
         combo_shift_tab { 
             timeout-ms = <50>;
             key-positions = <11 13>;
             bindings = <&kp LS(TAB)>;
-        };          
-        combo_bot { 
+            layers = <0>;
+        };
+        combo_bot {
             timeout-ms = <50>;
             key-positions = <21 23>;
             bindings = <&kp LC(END)>;
+            layers = <0>;
         }; 
         combo_terminal { 
             timeout-ms = <50>;
             key-positions = <16 17 18>;
             bindings = <&kp LC(LS(T))>;
-            layers = <2>;
+            layers = <0>;
         };
         combo_editor { 
             timeout-ms = <50>;
             key-positions = <6 7 8>;
             bindings = <&kp LC(LS(E))>;
-            layers = <2>;
-        };
-        combo_paste_one { 
-            timeout-ms = <50>;
-            key-positions = <16 17 18>;
-            bindings = <&kp LC(V)>;
             layers = <0>;
-        };
-        combo_copy_one { 
-            timeout-ms = <50>;
-            key-positions = <11 12 13>;
-            bindings = <&kp LC(C)>;
-        };
+        }; 
         combo_undo_one { 
             timeout-ms = <50>;
             key-positions = <26 27 28>;
@@ -192,28 +212,12 @@
             bindings = <&kp DOT>;
             layers = <3>;
         };
-        combo_word { 
-            timeout-ms = <50>;
-            key-positions = <16 18>;
-            bindings = <&kp LC(W)>;
-        };
-        combo_alt_tab { 
-            timeout-ms = <50>;
-            key-positions = <10 11 12 13>;
-            bindings = <&kp LA(TAB)>;
-        };
        combo_func_def { 
             timeout-ms = <50>;
             key-positions = <1 2>;
             bindings = <&kp LC(B)>;
             layers = <1>;
         };
-      p_key_temp_fix {
-            timeout-ms = <50>;
-            key-positions = <9 10>;
-            bindings = <&kp P>;
-            layers = <1>;
-      };
     };
 };
 
