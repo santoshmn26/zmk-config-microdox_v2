@@ -193,18 +193,19 @@
             timeout-ms = <50>;
             key-positions = <16 17 18>;
             bindings = <&kp LC(LS(T))>;
-            layers = <0>;
+            layers = <3>;
         };
         combo_editor { 
             timeout-ms = <50>;
             key-positions = <6 7 8>;
             bindings = <&kp LC(LS(E))>;
-            layers = <0>;
+            layers = <3>;
         }; 
         combo_undo_one { 
             timeout-ms = <50>;
             key-positions = <26 27 28>;
             bindings = <&kp LC(Z)>;
+            layers = <3>;
         };
         combo_dot_n { 
             timeout-ms = <50>;
