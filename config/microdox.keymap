@@ -277,10 +277,10 @@
 // |     |     |     |     |     |   |  C  |  1  |  2  |  3  |  F  |
 //             |     |     |     |   |  0  |  .  |     |
                         bindings = <
-   &kp LC(LA(TAB))  &kp LC(LS(F3))        &kp LC(LS(F4))      &kp LC(LS(F5))      &bt BT_CLR     &kp PAGE_UP     &kp N7  &kp N8 &kp N9 &kp LC(TAB)
-   &trans        &kp LS(LS(F1))  &trans      &trans        &trans          &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &kp LC(LS(TAB))
-   &kp LC(Z)        &trans          &trans      &trans        &trans           &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
-                 &trans &trans &kp LOCKING_NUM   &trans &kp DOT &kp LC(LA(DEL))
+   &mkp LCLK  &mmv MOVE_UP    &mkp RCLK     &kp LC(LS(F5))      &bt BT_CLR     &msc SCRL_UP   &kp N7  &kp N8 &kp N9 &mkp LCLK
+   &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &kp LC(LS(F6))       &msc SCRL_DOWN   &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &mkp RCLK 
+   &kp LC(Z)        &msc SCRL_LEFT         &msc SCRL_RIGHT     &trans        &trans           &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
+                 &trans &trans &kp LOCKING_NUM   &msc SCRL_UP &msc SCRL_DOWN &kp DOT
                         >;
                 };
 
