@@ -1,311 +1,290 @@
+
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/pointing.h>
+ #include <behaviors.dtsi>
+ #include <dt-bindings/zmk/keys.h>
+ #include <dt-bindings/zmk/bt.h>
+ #include <dt-bindings/zmk/pointing.h>
 
-#define SHORTCUT_LAYER 4
+ #define SHORTCUT_LAYER 4
 
-// MOD TAB CTRL Z
-&mt {
-    tapping-term-ms = <150>;
-};
-
-// SHIFT AND CAPSLOCK
-/ {
-    behaviors {
-        td1: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_0";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LSHIFT>, <&kp CAPSLOCK>, <&kp CAPSLOCK>;
-        };
-    };
-    };
-
-/ {
-    macros {
-        zed_em_kay: zed_em_kay {
-            label = "ZM_zed_em_kay";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp HOME>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp END>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp BSPC>
-                ;
-        };
-        zmk_clear: zmk_clear {
-            label = "ZM_zmk_clear";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp C &kp L &kp E &kp A &kp R>
-                , <&macro_tap &kp RET>
-                ;
-        };
-        zmk_copy: increase_editor {
-            label = "ZM_increase_editor";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp I>
-                , <&macro_tap &kp RET>
-                , <&macro_release &kp LCTRL>
-                ;
-        };
-        zmk_copy: decrease_editor {
-            label = "ZM_decrease_editor";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp O>
-                , <&macro_tap &kp RET>
-                , <&macro_release &kp LCTRL>
-                ;
-        };
-    };
-};
+ // MOD TAB CTRL Z
+ &mt {
+     tapping-term-ms = <150>;
+ };
 
 
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_hash {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp HASH>;
-            layers = <0>;
-        };
-       combo_at {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp AT>;
-            layers = <0>;
-        };
-       combo_mul {
-            timeout-ms = <50>;
-            key-positions = <6 7>;
-            bindings = <&kp KP_MULTIPLY>;
-            layers = <0>;
-        };
-        combo_equal {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp EQUAL>;
-            layers = <0>;
-        };
-        combo_plus {
-            timeout-ms = <50>;
-            key-positions = <26 27>;
-            bindings = <&kp KP_PLUS>;
-            layers = <0>;
-        };
-        combo_and {
-            timeout-ms = <50>;
-            key-positions = <27 28>;
-            bindings = <&kp AMPS>;
-            layers = <0>;
-        };
-        combo_excel {
-            timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&kp EXCL>;
-            layers = <0>;
-        };
-       combo_tab {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp TAB>;
-            layers = <0>;
-        };
-       combo_sel_line_home {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp LS(HOME)>;
-            layers = <0>;
-        };
-       combo_sel_line_end {
-            timeout-ms = <50>;
-            key-positions = <8 9>;
-            bindings = <&kp LS(END)>;
-            layers = <0>;
-        };
-        combo_windows_paste_history {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp LG(V)>;
-            layers = <0>;
-        };
-       combo_last_line_eof {
-            timeout-ms = <50>;
-            key-positions = <21 23>;
-            bindings = <&kp LC(END)>;
-            layers = <0>;
-        };
-        combo_right_word_selected {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp LS(LC(RIGHT))>;
-            layers = <2>;
-        };
-        combo_left_word_selected {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&kp LS(LC(LEFT))>;
-            layers = <2>;
-        };
-        combo_right_bksp {
-            timeout-ms = <50>;
-            key-positions = <18 19>;
-            bindings = <&kp BSPC>;
-            layers = <0>;
-        };
-        combo_del_line_spl_macro {
-            timeout-ms = <50>;
-            key-positions = <12 17>;
-            bindings = <&zed_em_kay>;
-            layers = <0>;
-        };
-        combo_top {
-            timeout-ms = <50>;
-            key-positions = <1 3>;
-            bindings = <&kp LC(HOME)>;
-            layers = <0>;
-        };
-        combo_shift_tab {
-            timeout-ms = <50>;
-            key-positions = <11 13>;
-            bindings = <&kp LS(TAB)>;
-            layers = <0>;
-        };
-        combo_bot {
-            timeout-ms = <50>;
-            key-positions = <21 23>;
-            bindings = <&kp LC(END)>;
-            layers = <0>;
-        };
-        combo_terminal {
-            timeout-ms = <50>;
-            key-positions = <16 17 18>;
-            bindings = <&kp LC(LS(T))>;
-            layers = <3>;
-        };
-        combo_clear_spl_macro {
-            timeout-ms = <50>;
-            key-positions = <0 9>;
-            bindings = <&zmk_clear>;
-            layers = <3>;
-        };
-        combo_editor {
-            timeout-ms = <50>;
-            key-positions = <6 7 8>;
-            bindings = <&kp LC(LS(R))>;
-            layers = <3>;
-        };
-        combo_undo_one {
-            timeout-ms = <50>;
-            key-positions = <26 27 28>;
-            bindings = <&kp LC(Z)>;
-            layers = <3>;
-        };
-        combo_dot_n {
-            timeout-ms = <50>;
-            key-positions = <27 28>;
-            bindings = <&kp DOT>;
-            layers = <3>;
-        };
-       combo_func_def {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp LC(B)>;
-            layers = <1>;
-        };
-    };
-};
+ // SHIFT AND CAPSLOCK
+ / {
+     behaviors {
+         td1: tap_dance_0 {
+             compatible = "zmk,behavior-tap-dance";
+             label = "TAP_DANCE_0";
+             #binding-cells = <0>;
+             tapping-term-ms = <200>;
+             bindings = <&kp LSHIFT>, <&kp CAPSLOCK>, <&kp CAPSLOCK>;
+         };
+     };
+     };
 
-/ {
-        keymap {
-                compatible = "zmk,keymap";
+ / {
+     macros {
+         zed_em_kay: zed_em_kay {
+             label = "ZM_zed_em_kay";
+             compatible = "zmk,behavior-macro";
+             #binding-cells = <0>;
+             bindings
+                 = <&macro_tap &kp HOME>
+                 , <&macro_press &kp LSHFT>
+                 , <&macro_tap &kp END>
+                 , <&macro_release &kp LSHFT>
+                 , <&macro_tap &kp BSPC>
+                 ;
+         };
+         zmk_clear: zmk_clear {
+             label = "ZM_zmk_clear";
+             compatible = "zmk,behavior-macro";
+             #binding-cells = <0>;
+             bindings
+                 = <&macro_tap &kp C &kp L &kp E &kp A &kp R>
+                 , <&macro_tap &kp RET>
+                 ;
+         };
+     };
+ };
 
-                default_layer {
+
+ / {
+     combos {
+         compatible = "zmk,combos";
+         combo_hash {
+             timeout-ms = <50>;
+             key-positions = <17 18>;
+             bindings = <&kp HASH>;
+             layers = <0>;
+         };
+        combo_at {
+             timeout-ms = <50>;
+             key-positions = <1 2>;
+             bindings = <&kp AT>;
+             layers = <0>;
+         };
+        combo_mul {
+             timeout-ms = <50>;
+             key-positions = <6 7>;
+             bindings = <&kp KP_MULTIPLY>;
+             layers = <0>;
+         };
+         combo_equal {
+             timeout-ms = <50>;
+             key-positions = <16 17>;
+             bindings = <&kp EQUAL>;
+             layers = <0>;
+         };
+         combo_plus {
+             timeout-ms = <50>;
+             key-positions = <26 27>;
+             bindings = <&kp KP_PLUS>;
+             layers = <0>;
+         };
+         combo_and {
+             timeout-ms = <50>;
+             key-positions = <27 28>;
+             bindings = <&kp AMPS>;
+             layers = <0>;
+         };
+         combo_excel {
+             timeout-ms = <50>;
+             key-positions = <22 23>;
+             bindings = <&kp EXCL>;
+             layers = <0>;
+         };
+        combo_tab {
+             timeout-ms = <50>;
+             key-positions = <11 12>;
+             bindings = <&kp TAB>;
+             layers = <0>;
+         };
+        combo_sel_line_home {
+             timeout-ms = <50>;
+             key-positions = <0 1>;
+             bindings = <&kp LS(HOME)>;
+             layers = <0>;
+         };
+        combo_sel_line_end {
+             timeout-ms = <50>;
+             key-positions = <8 9>;
+             bindings = <&kp LS(END)>;
+             layers = <0>;
+         };
+         combo_windows_paste_history {
+             timeout-ms = <50>;
+             key-positions = <21 22>;
+             bindings = <&kp LG(V)>;
+             layers = <0>;
+         };
+        combo_last_line_eof {
+             timeout-ms = <50>;
+             key-positions = <21 23>;
+             bindings = <&kp LC(END)>;
+             layers = <0>;
+         };
+         combo_left_word {
+             timeout-ms = <50>;
+             key-positions = <16 17>;
+             bindings = <&kp LC(LEFT)>;
+             layers = <3>;
+         };
+         combo_right_word {
+             timeout-ms = <50>;
+             key-positions = <17 18>;
+             bindings = <&kp LC(RIGHT)>;
+             layers = <3>;
+         };
+         combo_right_word_selected {
+             timeout-ms = <50>;
+             key-positions = <17 18>;
+             bindings = <&kp LS(LC(RIGHT))>;
+             layers = <2>;
+         };
+         combo_left_word_selected {
+             timeout-ms = <50>;
+             key-positions = <16 17>;
+             bindings = <&kp LS(LC(LEFT))>;
+             layers = <2>;
+         };
+         combo_right_bksp {
+             timeout-ms = <50>;
+             key-positions = <18 19>;
+             bindings = <&kp BSPC>;
+             layers = <0>;
+         };
+         combo_del_line_spl_macro {
+             timeout-ms = <50>;
+             key-positions = <12 17>;
+             bindings = <&zed_em_kay>;
+             layers = <0>;
+         };
+         combo_clear_spl_macro {
+             timeout-ms = <50>;
+             key-positions = <0 9>;
+             bindings = <&zmk_clear>;
+             layers = <3>;
+         };
+         combo_top {
+             timeout-ms = <50>;
+             key-positions = <1 3>;
+             bindings = <&kp LC(HOME)>;
+             layers = <0>;
+         };
+         combo_shift_tab {
+             timeout-ms = <50>;
+             key-positions = <11 13>;
+             bindings = <&kp LS(TAB)>;
+             layers = <0>;
+         };
+         combo_bot {
+             timeout-ms = <50>;
+             key-positions = <21 23>;
+             bindings = <&kp LC(END)>;
+             layers = <0>;
+         };
+         combo_terminal {
+             timeout-ms = <50>;
+             key-positions = <16 17 18>;
+             bindings = <&kp LC(LS(T))>;
+             layers = <3>;
+         };
+         combo_editor {
+             timeout-ms = <50>;
+             key-positions = <6 7 8>;
+             bindings = <&kp LC(LS(E))>;
+             layers = <3>;
+         };
+         combo_undo_one {
+             timeout-ms = <50>;
+             key-positions = <26 27 28>;
+             bindings = <&kp LC(Z)>;
+             layers = <3>;
+         };
+         combo_dot_n {
+             timeout-ms = <50>;
+             key-positions = <27 28>;
+             bindings = <&kp DOT>;
+             layers = <3>;
+         };
+        combo_func_def {
+             timeout-ms = <50>;
+             key-positions = <1 2>;
+             bindings = <&kp LC(B)>;
+             layers = <1>;
+         };
+     };
+ };
+
+
+ / {
+         keymap {
+                 compatible = "zmk,keymap";
+
+                 default_layer {
+
+                         bindings = <
+    &kp Q  &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P
+    &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp RET
+    &mt LCTRL Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
+           &kp LGUI &mo 1 &lt 3 SPACE &td1 &mo 2 &kp LCTRL
+                         >;
+                 };
+                 nav_layer {
+ // -----------------------------------------------------------------------------------------
+                         bindings = <
+    &kp HOME   &kp UP       &kp END        &kp RET     &kp KP_PLUS         &kp KP_MULTIPLY    &kp LG(LC(RIGHT))    &kp MINUS      &kp SQT     &kp LC(BSPC)
+    &kp LEFT   &kp DOWN     &kp RIGHT      &kp DEL     &kp EQUAL           &kp LC(LA(TAB))    &kp BSPC             &kp UNDER      &kp DQT     &kp COLON
+    &kp LC(C)  &kp LC(V)    &kp LALT       &kp BSPC    &kp BSLH            &kp PIPE           &kp LG(LC(LEFT))     &kp LT         &kp GT      &kp QMARK
+                             &kp LC(A)    &trans     &kp TILDE          &kp LSHIFT  &kp ESC   &kp GRAVE
+                         >;
+                 };
+
+                 sym_layer {
+ // -----------------------------------------------------------------------------------------
+
+                         bindings = <
+    &kp LPAR    &kp LS(LC(HOME))          &trans    &kp LS(LC(END))            &kp EXCL        &kp DOLLAR &kp PRCNT     &kp CARET         &kp 0     &kp RPAR
+    &kp LBRC    &kp LS(LC(LEFT))          &kp KP_N5     &kp LS(LC(RIGHT))          &kp AT          &kp MINUS  &kp TAB       &kp HASH          &kp SEMI       &kp RBRC
+    &kp LBKT    &kp KP_N1                 &kp KP_N2     &kp KP_N3  &kp KP_N0       &kp AMPS   &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2   &kp RBKT
+                        &kp LALT  &mo 1 &kp LC(DEL)             &kp LS(FSLH)      &trans         &kp LS(TAB)
+                         >;
+                 };
+
+                 num_layer {
+ // -----------------------------------------------------------------------------------------
+
+                         bindings = <
+    &mkp LCLK  &mmv MOVE_UP    &mkp RCLK     &kp LC(LS(F5))      &bt BT_CLR     &msc SCRL_UP   &kp N7  &kp N8 &kp N9 &mkp LCLK
+    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT      &kp LC(LS(F6))       &msc SCRL_DOWN   &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &mkp RCLK
+    &kp LC(Z)        &msc SCRL_LEFT         &msc SCRL_RIGHT     &trans        &trans           &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
+                  &trans &trans &kp LOCKING_NUM   &msc SCRL_UP &msc SCRL_DOWN &kp DOT
+                         >;
+                 };
+                 shortcut_layer {
 // -----------------------------------------------------------------------------------------
-// |  Q  |  W  |  E  |  R  |  T   |   |  Y  |  U   |  I  |  O  |  P  |
-// |  A  |  S  |  D  |  F  |  G   |   |  H  |  J   |  K  |  L  |  ;  |
-// |  Z  |  X  |  C  |  V  |  B   |   |  N  |  M   |  ,  |  .  |  /  |
-//             | GUI | NAV | SHFT |   | SPC | SYM  | ALT |
-bindings = <
-    &kp Q     &kp W     &kp E     &kp R         &kp T       &kp Y     &kp U     &kp I       &kp O         &kp P
-    &kp A     &kp S     &kp D     &kp F         &kp G       &kp H     &kp J     &kp K       &kp L         &kp RET
-    &mt LCTRL &kp Z     &kp X     &kp C         &kp V       &kp B     &kp N     &kp M       &kp COMMA     &kp DOT   &lt 4 FSLH
-              &kp LGUI  &mo 1     &lt 3 SPACE               &td1      &mo 2     &kp LCTRL
-                    >;
-                };
-                nav_layer {
-// -----------------------------------------------------------------------------------------
-// |BTCLR|     | ESC |  ~   |     |   | TAB | HOME |  UP  | END | DEL  |
-// | BT1 | GUI | ALT | CTRL | NUM |   |  /  | LEFT | DOWN | RGT | BKSP |
-// | BT2 |     |     |      |     |   |  \  | ENT  |      |     |      |
-//             |     |      |     |   |     |      |      |
                         bindings = <
-   &kp HOME   &kp UP       &kp END        &kp RET     &kp KP_PLUS         &kp KP_MULTIPLY    &kp LG(LC(RIGHT))    &kp MINUS      &kp SQT     &kp LC(BSPC)
-   &kp LEFT   &kp DOWN     &kp RIGHT      &kp DEL     &kp EQUAL           &kp LC(LA(TAB))    &kp BSPC             &kp UNDER      &kp DQT     &kp COLON
-   &kp LC(C)  &kp LC(V)    &kp LALT       &kp BSPC    &kp BSLH            &kp PIPE           &kp LG(LC(LEFT))     &kp LT         &kp GT      &kp QMARK
-                           &kp LC(A)      &trans      &kp TILDE           &kp LSHIFT         &kp ESC              &kp GRAVE
-                        >;
-                };
+ &mkp LCLK        &kp LC(UP)               &mkp RCLK              &kp LC(LS(F5))      &bt BT_CLR          &msc SCRL_UP    &kp N7  &kp N8 &kp N9 &mkp LCLK
+ &kp LC(LEFT)     &mmv MOVE_DOWN           &kp LC(RIGHT)          &kp LC(LS(F6))      &msc SCRL_DOWN      &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &mkp RCLK
+ &kp LC(Z)        &msc SCRL_LEFT           &msc SCRL_RIGHT        &trans              &trans              &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
+                  &trans      &trans       &kp LOCKING_NUM                            &kp LG(I)        &msc SCRL_DOWN  &kp DOT
+                 };
 
-                sym_layer {
-// -----------------------------------------------------------------------------------------
-// |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |
-// |     |     |     |     |     |   |  -  |  =  |  {  |  }  | "|" |
-// |     |     |     |     |     |   |  _  |  +  |  [  |  ]  |  \  |
-//             | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp LPAR    &kp LS(LC(HOME))          &trans    &kp LS(LC(END))            &kp EXCL        &kp DOLLAR &kp PRCNT     &kp CARET         &kp 0     &kp RPAR
-   &kp LBRC    &kp LS(LC(LEFT))          &kp KP_N5     &kp LS(LC(RIGHT))          &kp AT          &kp MINUS  &kp TAB       &kp HASH          &kp SEMI       &kp RBRC
-   &kp LBKT    &kp KP_N1                 &kp KP_N2     &kp KP_N3  &kp KP_N0       &kp AMPS   &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2   &kp RBKT
-                       &kp LALT  &mo 1 &kp LC(DEL)             &kp LS(FSLH)      &trans         &kp LS(TAB)
-                        >;
-                };
+         };
+ };
 
-// This layer is unreachable until "tri layer state" is sorted out.
-// Leaving it here for completeness.
-                num_layer {
-// -----------------------------------------------------------------------------------------
-// |     |     |     |     |     |   |  A  |  7  |  8  |  9  |  D  |
-// |     |     |     |     |     |   |  B  |  4  |  5  |  6  |  E  |
-// |     |     |     |     |     |   |  C  |  1  |  2  |  3  |  F  |
-//             |     |     |     |   |  0  |  .  |     |
-                        bindings = <
-   &mkp LCLK        &mmv MOVE_UP             &mkp RCLK              &kp LC(LS(F5))      &bt BT_CLR          &msc SCRL_UP    &kp N7  &kp N8 &kp N9 &mkp LCLK
-   &mmv MOVE_LEFT   &mmv MOVE_DOWN           &mmv MOVE_RIGHT        &kp LC(LS(F6))      &msc SCRL_DOWN      &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &mkp RCLK
-   &kp LC(Z)        &msc SCRL_LEFT           &msc SCRL_RIGHT        &trans              &trans              &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
-                    &trans      &trans       &kp LOCKING_NUM                            &msc SCRL_UP        &msc SCRL_DOWN  &kp DOT
-                        >;
-                };
-                shortcuts_layer {
-                    // |     |     |     |     |     |   |  A  |  7  |  8  |  9  |  D  |
-                    // -----------------------------------------------------------------------------------------
-                    // |     |     |     |     |     |   |  C  |  1  |  2  |  3  |  F  |
-                    // |     |     |     |     |     |   |  B  |  4  |  5  |  6  |  E  |
-//             |     |     |     |   |  0  |  .  |     |
-                    bindings = <
-&mkp LCLK        &kp LC(UP)               &mkp RCLK              &kp LC(LS(F5))      &bt BT_CLR          &msc SCRL_UP    &kp N7  &kp N8 &kp N9 &mkp LCLK
-&kp LC(LEFT)     &mmv MOVE_DOWN           &kp LC(RIGHT)          &kp LC(LS(F6))      &msc SCRL_DOWN      &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &mkp RCLK
-&kp LC(Z)        &msc SCRL_LEFT           &msc SCRL_RIGHT        &trans              &trans              &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
-                 &trans      &trans       &kp LOCKING_NUM                            &kp LG(I)        &msc SCRL_DOWN  &kp DOT
-                     >;
-                };
-        };
-};
+
+//  &mkp LCLK        &kp LC(UP)               &mkp RCLK              &kp LC(LS(F5))      &bt BT_CLR          &msc SCRL_UP    &kp N7  &kp N8 &kp N9 &mkp LCLK
+//  &kp LC(LEFT)     &mmv MOVE_DOWN           &kp LC(RIGHT)          &kp LC(LS(F6))      &msc SCRL_DOWN      &kp PAGE_DOWN   &kp N4  &kp N5 &kp N6 &mkp RCLK
+//  &kp LC(Z)        &msc SCRL_LEFT           &msc SCRL_RIGHT        &trans              &trans              &kp N0          &kp N1  &kp N2 &kp N3 &kp BSPC
+//                   &trans      &trans       &kp LOCKING_NUM                            &kp LG(I)        &msc SCRL_DOWN  &kp DOT
