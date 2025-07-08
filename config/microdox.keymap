@@ -251,10 +251,10 @@
                 sym_layer {
                         // -----------------------------------------------------------------------------------------
                         bindings = <
-    &kp LPAR       &kp LS(LC(HOME)) &trans         &kp LS(LC(END))  &kp EXCL            &kp DOLLAR     &kp PRCNT      &kp CARET      &kp 0          &kp RPAR
-    &kp LBRC       &kp LS(LC(LEFT)) &kp KP_N5      &kp LS(LC(RIGHT))&kp AT              &kp MINUS      &kp TAB        &kp HASH       &kp SEMI       &kp RBRC
-    &kp LBKT       &kp KP_N1        &kp KP_N2      &kp KP_N3        &kp KP_N0           &kp AMPS       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &kp RBKT
-                                   &kp LALT       &mo 1            &kp LC(DEL)         &kp LS(FSLH)   &trans         &kp LS(TAB)
+    &kp LPAR       &kp LG(LEFT)      &kp LG(UP)     &kp LG(RIGHT)  &kp LG(TAB)            &kp DOLLAR     &kp PRCNT      &kp CARET      &kp 0          &kp RPAR
+    &kp LBRC       &kp LS(LC(LEFT))  &kp KP_N5      &kp LS(LC(RIGHT))  &kp AT              &kp MINUS      &kp TAB        &kp HASH       &kp SEMI       &kp RBRC
+    &kp LBKT       &kp KP_N1         &kp KP_N2      &kp KP_N3        &kp KP_N0           &kp AMPS       &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &kp RBKT
+                                     &kp LALT       &mo 1            &kp LC(DEL)         &kp LS(FSLH)   &trans         &kp LS(TAB)
                         >;
                 };
 
