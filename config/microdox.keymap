@@ -17,18 +17,18 @@
  };
 
 
- // SHIFT AND CAPSLOCK
- / {
-     behaviors {
-         td1: tap_dance_0 {
-             compatible = "zmk,behavior-tap-dance";
-             label = "TAP_DANCE_0";
-             #binding-cells = <0>;
-             tapping-term-ms = <200>;
-             bindings = <&kp LSHIFT>, <&kp CAPSLOCK>;
-         };
-     };
-     };
+// SHIFT AND CAPSLOCK
+/ {
+    behaviors {
+        td1: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_0";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHIFT>, <&kp CAPSLOCK>;
+        };
+    };
+};
 
  / {
      macros {
@@ -157,12 +157,18 @@
              bindings = <&kp BSPC>; // TODO: option to change
              layers = <0>;
          };
-         combo_del_line_spl_macro {
+         combo_command_palette {
              timeout-ms = <50>;
              key-positions = <12 17>;
-             bindings = <&zed_em_kay>;
+             bindings = <&kp LC(LS(P))>;
              layers = <0>;
          };
+         combo_find {
+            timeout-ms = <50>;
+            key-positions = <13 16>;
+            bindings = <&kp LC(F)>;
+            layers = <0>;
+        };
          combo_clear_spl_macro {
              timeout-ms = <50>;
              key-positions = <0 9>;
@@ -219,7 +225,6 @@
         };
      };
  };
-
 
  / {
          keymap {
