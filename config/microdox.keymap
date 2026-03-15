@@ -145,12 +145,6 @@
              bindings = <&kp LG(V)>;
              layers = <0>;
          };
-        combo_last_line_eof {
-             timeout-ms = <50>;
-             key-positions = <21 23>;
-             bindings = <&kp LC(END)>;
-             layers = <0>;
-         };
          combo_right_bksp {
              timeout-ms = <50>;
              key-positions = <18 19>;
