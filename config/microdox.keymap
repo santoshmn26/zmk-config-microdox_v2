@@ -9,6 +9,9 @@
  #include <dt-bindings/zmk/bt.h>
  #include <dt-bindings/zmk/pointing.h>
 
+ // Ctrl+Shift+Alt combined modifier (avoids triple-nesting DTS parse error in Zephyr 4.1)
+ #define MEH(kc) ((kc) | (0x07 << 24))
+
  #define SHORTCUT_LAYER 4
 
  // MOD TAB CTRL Z
@@ -209,61 +212,61 @@
          combo_window_left {
             timeout-ms = <50>;
             key-positions = <0 5>;
-            bindings = <&kp LC(LS(LALT(X)))>;
+            bindings = <&kp MEH(X)>;
             layers = <0>;
         };
         combo_window_right {
             timeout-ms = <50>;
             key-positions = <4 9>;
-            bindings = <&kp LC(LS(LALT(B)))>;
+            bindings = <&kp MEH(B)>;
             layers = <0>;
         };
         combo_window_maximize {
             timeout-ms = <50>;
             key-positions = <2 7>;
-            bindings = <&kp LC(LS(LALT(M)))>;
+            bindings = <&kp MEH(M)>;
             layers = <0>;
         };
         combo_window_center {
             timeout-ms = <50>;
             key-positions = <0 9>;
-            bindings = <&kp LC(LS(LALT(L)))>;
+            bindings = <&kp MEH(L)>;
             layers = <0>;
         };
         combo_window_center_big {
             timeout-ms = <50>;
             key-positions = <10 19>;
-            bindings = <&kp LC(LS(LALT(K)))>;
+            bindings = <&kp MEH(K)>;
             layers = <0>;
         };
         combo_cursor_app {
             timeout-ms = <50>;
             key-positions = <32 33>;
-            bindings = <&kp LC(LS(LALT(V)))>;
+            bindings = <&kp MEH(V)>;
             layers = <0>;
         };
         combo_chrome_app {
             timeout-ms = <50>;
             key-positions = <22 27>;
-            bindings = <&kp LC(LS(LALT(C)))>;
+            bindings = <&kp MEH(C)>;
             layers = <0>;
         };
         combo_edge_app {
             timeout-ms = <50>;
             key-positions = <21 28>;
-            bindings = <&kp LC(LS(LALT(E)))>;
+            bindings = <&kp MEH(E)>;
             layers = <0>;
         };
         combo_terminal_app {
             timeout-ms = <50>;
             key-positions = <24 25>;
-            bindings = <&kp LC(LS(LALT(T)))>;
+            bindings = <&kp MEH(T)>;
             layers = <0>;
         };
         combo_claude_app {
             timeout-ms = <50>;
             key-positions = <23 26>;
-            bindings = <&kp LC(LS(LALT(S)))>;
+            bindings = <&kp MEH(S)>;
             layers = <0>;
         };
      };
